@@ -1,0 +1,34 @@
+modules:
+  jira:issueAction:
+    - key: jira-forge-remote-demo-hello-world-issue-action
+      resource: main
+      resolver:
+        endpoint: remote-qrcode
+      render: native
+      title: Create QR Code
+  function:
+    - key: resolver
+      handler: index.handler
+  endpoint:
+    - key: remote-qrcode
+      remote: remote-qrcode-api
+      auth:
+        appUserToken:
+          enabled: true
+        appSystemToken:
+          enabled: true
+resources:
+  - key: main
+    path: src/frontend/index.tsx
+permissions:
+  scopes:
+    - read:app-system-token
+    - read:app-user-token
+    - read:jira-work
+remotes:
+  - key: remote-qrcode-api
+    baseUrl: https://picked-easy-rat.ngrok-free.app
+app:
+  id: ari:cloud:ecosystem::app/2e0e64a7-84ce-42bb-9c9e-3b5142eb499b
+  runtime:
+    name: nodejs18.x

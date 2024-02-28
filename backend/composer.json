@@ -1,0 +1,13 @@
+{
+    "name": "shiftpi/jira-forge-remote-demo-backend",
+    "require": {
+        "chillerlan/php-qrcode": "^5.0",
+        "miladrahimi/php-jwt": "^3.1"
+    },
+    "authors": [
+        {
+            "name": "Andreas Rutz",
+            "email": "andreas.rutz@posteo.de"
+        }
+    ]
+}
